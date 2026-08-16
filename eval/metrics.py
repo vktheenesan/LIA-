@@ -8,9 +8,17 @@ Measures:
 5. Audit Record Integrity Verification
 """
 
+import sys
+import os
 import time
 import statistics
 from typing import Dict, Any, List
+
+# Ensure project root is in sys.path
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+
 from core.event_bus import EventBus, NormalizedEvent
 from shield.engine import ShieldEngine, PolicyDecision
 from reflex.engine import ReflexEngine
