@@ -1,0 +1,37 @@
+name: LIA Core CI/CD & Evaluation Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test-and-eval:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+
+      - name: Run Test Suite
+        run: |
+          python run_tests.py
+
+      - name: Run Evaluation Benchmark
+        run: |
+          PYTHONPATH=. python eval/generate_whitepaper_report.py
+
+      - name: Verify Audit & Documentation Integrity
+        run: |
+          test -f docs/WHITEPAPER_EVALUATION.md
