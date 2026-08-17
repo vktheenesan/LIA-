@@ -43,3 +43,6 @@ htmlcov/
 *.db
 *.log
 memory_store_local/
+
+# Private Local Patent Filings
+patent_filings/
