@@ -11,17 +11,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout Repository
+      uses: actions/checkout@v4
 
     - name: Set up Python 3.11
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.11'
 
-    - name: Install dependencies
+    - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install cryptography pytest
+        pip install cryptography reportlab pytest
 
     - name: Run Core Unit & Integration Tests
       run: |
@@ -31,10 +32,17 @@ jobs:
       run: |
         python benchmarks/run_all_benchmarks.py
 
-    - name: Archive Verification Artifacts & Raw CSV/JSON Data
-      uses: actions/upload-artifact@v3
+    - name: Generate Publication-Grade PDF Reports
+      run: |
+        python scripts/generate_verification_pdf.py
+        python scripts/generate_individual_test_pdfs.py
+
+    - name: Archive Verification Artifacts & Reports
+      uses: actions/upload-artifact@v4
       with:
-        name: zero-trust-verification-report
+        name: zero-trust-verification-reports
         path: |
           docs/UNFAKABLE_VERIFICATION_REPORT.md
+          docs/LIA_Core_Zero_Trust_Verification_Report.pdf
+          docs/pdf_reports/
           benchmarks/data/
