@@ -1,0 +1,94 @@
+{
+  "hardware_info": {
+    "os": "Darwin",
+    "os_release": "21.6.0",
+    "architecture": "x86_64",
+    "python_version": "3.14.2",
+    "processor": "i386"
+  },
+  "total_benchmark_runtime_sec": 5.1,
+  "benchmark_1": {
+    "iterations": 50000,
+    "mean_latency_us": 6.0397,
+    "min_latency_us": 0.242,
+    "p50_latency_us": 5.6,
+    "p90_latency_us": 11.589,
+    "p99_latency_us": 21.033,
+    "p99_9_latency_us": 250.803,
+    "max_latency_us": 5471.86,
+    "raw_csv_export": "/Users/sssssaranam/Desktop/LIA - Cybersecurity future/benchmarks/data/raw_latency_ns.csv"
+  },
+  "benchmark_2": {
+    "total_test_vectors": 5000,
+    "adversarial_attacks_tested": 2500,
+    "adversarial_attacks_blocked": 2500,
+    "adversarial_block_rate_pct": 100.0,
+    "overall_policy_accuracy_pct": 100.0,
+    "bypasses_detected": 0,
+    "raw_csv_export": "/Users/sssssaranam/Desktop/LIA - Cybersecurity future/benchmarks/data/adversarial_jailbreaks_results.csv"
+  },
+  "benchmark_3": {
+    "production_initial_sha256": "6f1c43aac2866dc8c352b9d303d2a407d3ed800cad731248c0df6c2418fa2c87",
+    "production_final_sha256": "6f1c43aac2866dc8c352b9d303d2a407d3ed800cad731248c0df6c2418fa2c87",
+    "production_file_mutated": false,
+    "recovery_correctly_rejected": true,
+    "sandbox_isolation_passed": true
+  },
+  "benchmark_4": {
+    "total_client_requests_processed": 7673,
+    "successful_queries": 7673,
+    "failed_queries_dropped_packets": 0,
+    "atomic_swap_success_rate_pct": 100.0,
+    "post_swap_active_state": "VERSION_2.0_SWAPPED_HEALTHY",
+    "zero_downtime_passed": true
+  },
+  "benchmark_5": {
+    "signed_records_generated": 1000,
+    "pre_tamper_all_valid": true,
+    "tampered_record_index": 500,
+    "original_payload": "cd6c8752-03a3-4bf3-9bbc-f3929fdf02e2:POLICY_INTERDICTION:1786960861.731593:agent_session_500:HIGH",
+    "tampered_payload": "cd6c8752-03a3-4bf3-9bbc-f3929fdf02e2:POLICY_INTERDICTION:1786960861.731593:agent_session_500:HIGX",
+    "tampered_record_verification_passed": false,
+    "tamper_detection_successful": true
+  },
+  "benchmark_6": {
+    "spawned_target_pid": 1192,
+    "total_event_to_signal_latency_us": 116.95,
+    "os_signal_kill_latency_us": 46.826,
+    "process_containment_passed": true
+  },
+  "benchmark_7": {
+    "iterations_tested": 1000,
+    "lia_shield_avg_latency_ms": 0.00639,
+    "llm_guardrail_proxy_avg_latency_ms": 53.61,
+    "speedup_multiplier": 8388.4,
+    "latency_reduction_pct": 99.9881
+  },
+  "benchmark_8": {
+    "total_events_processed": 50000,
+    "elapsed_time_sec": 1.888,
+    "throughput_eps": 26476.32,
+    "initial_rss_memory_mb": 25.34,
+    "final_rss_memory_mb": 25.34,
+    "memory_growth_mb": 0.0,
+    "zero_memory_leak_passed": true
+  },
+  "benchmark_9": {
+    "pre_incident_sha256": "c7da592404e127701cd5e7cc7a9356bd1eaf749066c5768c71663fe26e6fdd37",
+    "post_rollback_sha256": "c7da592404e127701cd5e7cc7a9356bd1eaf749066c5768c71663fe26e6fdd37",
+    "stage_5_validation_failed_correctly": true,
+    "stage_7_rollback_executed": true,
+    "cryptographic_hash_match": true,
+    "rollback_fallback_passed": true
+  },
+  "benchmark_10": {
+    "concurrent_agents": 50,
+    "events_per_agent": 1000,
+    "total_expected_events": 50000,
+    "total_received_events": 50000,
+    "dropped_events": 0,
+    "elapsed_time_sec": 1.298,
+    "concurrent_throughput_eps": 38528.17,
+    "concurrency_stress_passed": true
+  }
+}
